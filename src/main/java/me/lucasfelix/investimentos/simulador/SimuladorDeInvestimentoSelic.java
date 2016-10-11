@@ -14,9 +14,6 @@ public class SimuladorDeInvestimentoSelic implements SimuladorDeInvestimento {
     @Inject
     private Logger logger;
 
-    public SimuladorDeInvestimentoSelic() {
-    }
-
     @PostConstruct
     public void inicio() {
         logger.info("Iniciando o simulador SELIC");

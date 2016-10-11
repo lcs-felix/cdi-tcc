@@ -1,27 +1,26 @@
 package me.lucasfelix.investimentos.simulador;
 
-import me.lucasfelix.investimentos.annotation.Simulador;
 import me.lucasfelix.investimentos.logger.Logger;
-import me.lucasfelix.investimentos.modelo.Investimento;
 import me.lucasfelix.investimentos.modelo.Titulo;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.inject.Specializes;
 import javax.inject.Inject;
 
-@Simulador(investimento = Investimento.CDI)
-public class SimuladorDeInvestimentoCDI implements SimuladorDeInvestimento {
+@Specializes
+public class SimuladorCDB extends SimuladorDeInvestimentoCDI {
 
     @Inject
     private Logger logger;
 
     @PostConstruct
     public void inicio() {
-        logger.info("Iniciando o simulador CDI");
+        logger.info("Iniciando o simulador CDB");
     }
 
     @Override
     public Double retornoDoInvestimento(Titulo titulo) {
-        // Rende 14% ao ano
-        return titulo.getValor() * 1.15;
+        // Rende 15.5% ao ano
+        return super.retornoDoInvestimento(titulo) * 1.05;
     }
 }
