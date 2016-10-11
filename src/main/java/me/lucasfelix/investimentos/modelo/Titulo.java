@@ -1,4 +1,4 @@
-package me.lucasfelix.investimentos.simulador;
+package me.lucasfelix.investimentos.modelo;
 
 public class Titulo {
     private Double valor;

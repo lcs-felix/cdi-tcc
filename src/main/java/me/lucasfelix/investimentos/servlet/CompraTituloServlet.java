@@ -1,8 +1,8 @@
 package me.lucasfelix.investimentos.servlet;
 
 import me.lucasfelix.investimentos.logger.Logger;
-import me.lucasfelix.investimentos.simulador.SimuladorSelic;
-import me.lucasfelix.investimentos.simulador.Titulo;
+import me.lucasfelix.investimentos.modelo.Titulo;
+import me.lucasfelix.investimentos.simulador.Simulador;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -19,7 +19,7 @@ public class CompraTituloServlet extends HttpServlet {
     private Logger logger;
 
     @Inject
-    private SimuladorSelic simulador;
+    private Simulador simulador;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
