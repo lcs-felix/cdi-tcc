@@ -2,6 +2,8 @@ package me.lucasfelix.investimentos.servlet;
 
 import me.lucasfelix.investimentos.logger.Logger;
 import me.lucasfelix.investimentos.modelo.Titulo;
+import me.lucasfelix.investimentos.simulador.CDI;
+import me.lucasfelix.investimentos.simulador.Selic;
 import me.lucasfelix.investimentos.simulador.Simulador;
 
 import javax.inject.Inject;
@@ -18,7 +20,7 @@ public class CompraTituloServlet extends HttpServlet {
     @Inject
     private Logger logger;
 
-    @Inject
+    @Inject @Selic
     private Simulador simulador;
 
     @Override

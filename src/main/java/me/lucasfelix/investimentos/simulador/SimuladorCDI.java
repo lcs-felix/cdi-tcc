@@ -2,12 +2,11 @@ package me.lucasfelix.investimentos.simulador;
 
 import me.lucasfelix.investimentos.modelo.Titulo;
 
-@Selic
-public class SimuladorSelic implements Simulador {
+@CDI
+public class SimuladorCDI implements Simulador {
 
     @Override
     public Double retornoDoInvestimento(Titulo titulo) {
-        // Rende 14% ao ano
-        return titulo.getValor() * 1.14;
+        return titulo.getValor() * 1.15;
     }
 }
