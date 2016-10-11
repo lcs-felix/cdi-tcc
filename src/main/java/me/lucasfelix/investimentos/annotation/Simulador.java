@@ -1,4 +1,6 @@
-package me.lucasfelix.investimentos.simulador;
+package me.lucasfelix.investimentos.annotation;
+
+import me.lucasfelix.investimentos.modelo.Investimento;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.ElementType;
@@ -9,5 +11,7 @@ import java.lang.annotation.Target;
 @Qualifier
 @Target({ElementType.FIELD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CDI {
+public @interface Simulador {
+
+    Investimento investimento();
 }

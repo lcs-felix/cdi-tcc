@@ -1,9 +1,11 @@
 package me.lucasfelix.investimentos.simulador;
 
+import me.lucasfelix.investimentos.annotation.Simulador;
+import me.lucasfelix.investimentos.modelo.Investimento;
 import me.lucasfelix.investimentos.modelo.Titulo;
 
-@Selic
-public class SimuladorSelic implements Simulador {
+@Simulador(investimento = Investimento.SELIC)
+public class SimuladorDeInvestimentoSelic implements SimuladorDeInvestimento {
 
     @Override
     public Double retornoDoInvestimento(Titulo titulo) {
