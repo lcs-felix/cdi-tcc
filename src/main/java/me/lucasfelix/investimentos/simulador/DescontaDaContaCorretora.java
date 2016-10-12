@@ -5,12 +5,13 @@ import me.lucasfelix.investimentos.modelo.Titulo;
 
 import javax.inject.Inject;
 
-public class DescontaDaContaCorretora {
+public class DescontaDaContaCorretora implements Acao{
 
     @Inject
     private Logger logger;
 
-    public void desconta(Titulo titulo) {
+    @Override
+    public void executa(Titulo titulo) {
         logger.info("Descontando da conta da corretora o valor: " + titulo.getValor());
     }
 }

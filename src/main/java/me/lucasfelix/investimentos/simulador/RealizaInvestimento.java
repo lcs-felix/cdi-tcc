@@ -3,23 +3,24 @@ package me.lucasfelix.investimentos.simulador;
 import me.lucasfelix.investimentos.logger.Logger;
 import me.lucasfelix.investimentos.modelo.Titulo;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RealizaInvestimento {
 
-    @Inject
-    private Logger logger;
-
-    @Inject
-    private DescontaDaContaCorretora corretora;
-
-    @Inject
-    private EnviadorDeEmail email;
+    private List<Acao> acoes = new ArrayList<>();
 
     public void realizaInvestimento(Titulo titulo) {
-        logger.info("Realizando investimento");
+        System.out.println("Realizando investimento");
 
-        corretora.desconta(titulo);
-        email.envia(titulo);
+        for(Acao acao : acoes) {
+            acao.executa(titulo);
+        }
+    }
+
+    public void adicionaAcao(Acao acao) {
+        this.acoes.add(acao);
     }
 }

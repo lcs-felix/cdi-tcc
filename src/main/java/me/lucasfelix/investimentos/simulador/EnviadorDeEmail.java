@@ -5,12 +5,13 @@ import me.lucasfelix.investimentos.modelo.Titulo;
 
 import javax.inject.Inject;
 
-public class EnviadorDeEmail {
+public class EnviadorDeEmail implements Acao{
 
     @Inject
     private Logger logger;
 
-    public void envia(Titulo titulo) {
+    @Override
+    public void executa(Titulo titulo) {
         logger.info("Enviando e-mail de confirmação com o valor: " + titulo.getValor());
     }
 }
